@@ -12,6 +12,7 @@ export default meta;
 
 export const Base: Story = {
   args: {
-    children: 'Button'
+    children: 'Button',
+    variant: 'default'
   }
 };

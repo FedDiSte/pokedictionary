@@ -1,12 +1,13 @@
 import type { Config } from "tailwindcss";
 
 module.exports = {
-  darkMode: ["class"],
+  darkMode: ['class', '[data-mode="dark"]'],
   content: [
     "./pages/**/*.{ts,tsx}",
     "./components/**/*.{ts,tsx}",
     "./app/**/*.{ts,tsx}",
-    "./src/**/*.{ts,tsx}",
+    "./app/**/*.stories.@(js|jsx|mjs|ts|tsx)",
+    ".storybook/**/*.{ts,tsx}"
   ],
   prefix: "",
   theme: {

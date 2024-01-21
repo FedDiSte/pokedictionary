@@ -1,4 +1,5 @@
-/** @type {import('@remix-run/dev').AppConfig} */
+import { AppConfig } from "@remix-run/dev";
+
 export default {
   ignoredRouteFiles: ["**/.*"],
   tailwind: true,
@@ -6,4 +7,4 @@ export default {
   // assetsBuildDirectory: "public/build",
   // publicPath: "/build/",
   // serverBuildPath: "build/index.js",
-};
+} satisfies AppConfig;

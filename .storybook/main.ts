@@ -1,6 +1,8 @@
 import type { StorybookConfig } from "@storybook/react-vite";
 import { mergeConfig } from "vite";
 
+import tsconfigPaths from "vite-tsconfig-paths";
+
 const config: StorybookConfig = {
   stories: ["../app/**/*.mdx", "../app/**/*.stories.@(js|jsx|mjs|ts|tsx)"],
   addons: [
@@ -8,6 +10,7 @@ const config: StorybookConfig = {
     "@storybook/addon-essentials",
     "@storybook/addon-onboarding",
     "@storybook/addon-interactions",
+    'storybook-dark-mode'
   ],
   framework: {
     name: "@storybook/react-vite",
@@ -20,13 +23,7 @@ const config: StorybookConfig = {
     // return the customized config
     return mergeConfig(config, {
       // customize the Vite config here
-      resolve: {
-        alias: {
-          "~/*": "./app/*",
-          "~/components": "./app/components/*",
-          "~/lib": "./app/lib/*",
-        },
-      },
+      plugins: [tsconfigPaths()],
     });
   },
 };

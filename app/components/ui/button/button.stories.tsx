@@ -16,3 +16,24 @@ export const Base: Story = {
     variant: 'default'
   }
 };
+
+export const Secondary: Story = {
+  args: {
+    children: 'Button',
+    variant: 'secondary'
+  }
+};
+
+export const Ghost: Story = {
+  args: {
+    children: 'Button',
+    variant: 'ghost'
+  }
+};
+
+export const Outline: Story = {
+  args: {
+    children: 'Button',
+    variant: 'outline'
+  }
+};

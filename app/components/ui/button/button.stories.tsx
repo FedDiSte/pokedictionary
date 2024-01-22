@@ -1,11 +1,11 @@
 import { Button } from './button';
-import { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react';
 
 type Story = StoryObj<typeof Button>;
 
 const meta: Meta<typeof Button> = {
   title: 'Atoms/Button',
-  component: Button
+  component: Button,
 };
 
 export default meta;
@@ -13,27 +13,27 @@ export default meta;
 export const Base: Story = {
   args: {
     children: 'Button',
-    variant: 'default'
-  }
+    variant: 'default',
+  },
 };
 
 export const Secondary: Story = {
   args: {
     children: 'Button',
-    variant: 'secondary'
-  }
+    variant: 'secondary',
+  },
 };
 
 export const Ghost: Story = {
   args: {
     children: 'Button',
-    variant: 'ghost'
-  }
+    variant: 'ghost',
+  },
 };
 
 export const Outline: Story = {
   args: {
     children: 'Button',
-    variant: 'outline'
-  }
+    variant: 'outline',
+  },
 };

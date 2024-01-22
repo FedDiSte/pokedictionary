@@ -4,7 +4,9 @@
     "**/*.ts",
     "**/*.tsx",
     ".storybook/*"
-  ],
+,
+"svgr-template.cjs"
+],
   "compilerOptions": {
     "lib": [
       "DOM",

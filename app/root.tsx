@@ -1,21 +1,13 @@
-import { cssBundleHref } from "@remix-run/css-bundle";
-import type { LinksFunction, LoaderFunctionArgs } from "@remix-run/node";
-import {
-  Links,
-  LiveReload,
-  Meta,
-  Outlet,
-  Scripts,
-  ScrollRestoration,
-  useLoaderData,
-} from "@remix-run/react";
-import clsx from "clsx";
-import { PreventFlashOnWrongTheme, ThemeProvider, useTheme } from "remix-themes";
+import { cssBundleHref } from '@remix-run/css-bundle';
+import type { LinksFunction, LoaderFunctionArgs } from '@remix-run/node';
+import { Links, LiveReload, Meta, Outlet, Scripts, ScrollRestoration, useLoaderData } from '@remix-run/react';
+import clsx from 'clsx';
+import { PreventFlashOnWrongTheme, ThemeProvider, useTheme } from 'remix-themes';
 
-import stylesheet from "~/tailwind.css";
+import stylesheet from '~/tailwind.css';
 
-import { themeSessionResolver } from "./sessions.server";
- 
+import { themeSessionResolver } from './sessions.server';
+
 // Return the theme from the session storage using the loader
 export async function loader({ request }: LoaderFunctionArgs) {
   const { getTheme } = await themeSessionResolver(request);
@@ -25,8 +17,8 @@ export async function loader({ request }: LoaderFunctionArgs) {
 }
 
 export const links: LinksFunction = () => [
-  { rel: "stylesheet", href: stylesheet },
-  ...(cssBundleHref ? [{ rel: "stylesheet", href: cssBundleHref }] : []),
+  { rel: 'stylesheet', href: stylesheet },
+  ...(cssBundleHref ? [{ rel: 'stylesheet', href: cssBundleHref }] : []),
 ];
 
 // Wrap your app with ThemeProvider.
@@ -42,7 +34,6 @@ export default function AppWithProviders() {
 }
 
 export function App() {
-
   const data = useLoaderData<typeof loader>();
   const [theme] = useTheme();
 

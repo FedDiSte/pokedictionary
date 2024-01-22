@@ -1,12 +1,11 @@
-import type { Preview, StoryFn } from "@storybook/react";
+import type { Preview, StoryFn } from '@storybook/react';
 import { themes } from '@storybook/theming';
-
 
 import '../app/tailwind.css';
 
 const preview: Preview = {
   parameters: {
-    actions: { argTypesRegex: "^on[A-Z].*" },
+    actions: { argTypesRegex: '^on[A-Z].*' },
     controls: {
       matchers: {
         color: /(background|color)$/i,
@@ -19,10 +18,10 @@ const preview: Preview = {
       darkClass: ['dark', 'bg-background'],
       lightClass: ['bg-background'],
       // Override the default dark theme
-      dark: { ...themes.dark, },
+      dark: { ...themes.dark },
       // Override the default light theme
-      light: { ...themes.normal }
-    }
+      light: { ...themes.normal },
+    },
   },
   decorators: [
     (Story: StoryFn) => {
@@ -32,7 +31,7 @@ const preview: Preview = {
         </div>
       );
     },
-  ]
+  ],
 };
 
 export default preview;

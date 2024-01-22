@@ -1,7 +1,7 @@
-import { AppConfig } from "@remix-run/dev";
+import type { AppConfig } from '@remix-run/dev';
 
 export default {
-  ignoredRouteFiles: ["**/.*"],
+  ignoredRouteFiles: ['**/.*'],
   tailwind: true,
   // appDirectory: "app",
   // assetsBuildDirectory: "public/build",

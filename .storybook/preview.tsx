@@ -1,5 +1,6 @@
 import type { Preview, StoryFn } from '@storybook/react';
 import { themes } from '@storybook/theming';
+import { createRemixStub } from '@remix-run/testing';
 
 import '../app/tailwind.css';
 
@@ -25,11 +26,19 @@ const preview: Preview = {
   },
   decorators: [
     (Story: StoryFn) => {
-      return (
-        <div>
-          <Story />
-        </div>
-      );
+      const RemixStub = createRemixStub([
+        {
+          path: '/*',
+          action: () => ({ redirect: '/' }),
+          loader: () => ({ redirect: '/' }),
+          Component() {
+            // <-- here
+            return <Story />;
+          },
+        },
+      ]);
+
+      return <RemixStub />;
     },
   ],
 };

@@ -8,6 +8,7 @@ import {
   NavigationMenuList,
   navigationMenuTriggerStyle,
 } from '../ui/navigation-menu/navigation-menu';
+import { ModeToggle } from '../mode-toggle/mode-toggle';
 
 type MenuItem = {
   link: string;
@@ -50,14 +51,17 @@ export function Header() {
               {items.map((item, index) => {
                 return (
                   <NavigationMenuItem key={`nav-item-link-${item.label}-${index}`}>
-                    <Link to={item.link}>
-                      <NavigationMenuLink className={navigationMenuTriggerStyle()}>{item.label}</NavigationMenuLink>
-                    </Link>
+                    <NavigationMenuLink asChild className={navigationMenuTriggerStyle()}>
+                      <Link to={item.link}>{item.label}</Link>
+                    </NavigationMenuLink>
                   </NavigationMenuItem>
                 );
               })}
             </NavigationMenuList>
           </NavigationMenu>
+        </div>
+        <div className="flex flex-1 items-center justify-between space-x-2 md:justify-end">
+          <ModeToggle />
         </div>
       </div>
     </header>

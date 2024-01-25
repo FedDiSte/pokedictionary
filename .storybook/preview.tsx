@@ -1,7 +1,7 @@
+import { createRemixStub } from '@remix-run/testing';
 import type { Preview, StoryFn } from '@storybook/react';
 import { themes } from '@storybook/theming';
-import { createRemixStub } from '@remix-run/testing';
-
+import { Theme, ThemeProvider } from 'remix-themes';
 import '../app/tailwind.css';
 
 const preview: Preview = {
@@ -30,15 +30,18 @@ const preview: Preview = {
         {
           path: '/*',
           action: () => ({ redirect: '/' }),
-          loader: () => ({ redirect: '/' }),
+          loader: () => ({ redirect: '/', theme: 'DARK' }),
           Component() {
-            // <-- here
             return <Story />;
           },
         },
       ]);
 
-      return <RemixStub />;
+      return (
+        <ThemeProvider specifiedTheme={Theme.DARK} themeAction="">
+          <RemixStub />
+        </ThemeProvider>
+      );
     },
   ],
 };

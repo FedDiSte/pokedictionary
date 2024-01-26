@@ -27,7 +27,7 @@ export const links: LinksFunction = () => [
 export default function AppWithProviders() {
   const data = useLoaderData<typeof loader>();
   return (
-    <ThemeProvider specifiedTheme={data.theme} themeAction="/action/set-theme">
+    <ThemeProvider disableTransitionOnChange specifiedTheme={data.theme} themeAction="/action/set-theme">
       <App />
     </ThemeProvider>
   );
@@ -46,7 +46,7 @@ export function App() {
         <PreventFlashOnWrongTheme ssrTheme={Boolean(data.theme)} />
         <Links />
       </head>
-      <body>
+      <body className="min-h-screen bg-background font-sans antialiased">
         <Outlet />
         <ScrollRestoration />
         <Scripts />

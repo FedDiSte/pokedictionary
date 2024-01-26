@@ -67,10 +67,20 @@ module.exports = {
           from: { height: 'var(--radix-accordion-content-height)' },
           to: { height: '0' },
         },
+        'mode-switcher-out': {
+          from: { transform: 'translate(0, 0)' },
+          to: { transform: 'translate(2em, 2em)' },
+        },
+        'mode-switcher-in': {
+          from: { transform: 'translate(-2em, 2em)' },
+          to: { transform: 'translate(0, 0)' },
+        },
       },
       animation: {
         'accordion-down': 'accordion-down 0.2s ease-out',
         'accordion-up': 'accordion-up 0.2s ease-out',
+        'mode-switcher-out': 'mode-switcher-out 0.75s ease-out',
+        'mode-switcher-in': 'mode-switcher-in 0.75s ease-out',
       },
     },
   },

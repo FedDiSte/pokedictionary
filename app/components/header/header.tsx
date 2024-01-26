@@ -42,7 +42,6 @@ export function Header() {
           <Button className="mr-6 flex items-center space-x-2 text-foreground" variant="link" asChild>
             <Link to={'/'} className="no-underline hover:no-underline">
               <Pokeball className="h-6 w-6" />
-              {/* TODO Fix text */}
               <span className="hidden font-bold sm:inline-block">PokéDictionary</span>
             </Link>
           </Button>

@@ -6,6 +6,8 @@
     ".storybook/*"
 ,
 "svgr-template.cjs"
+,
+"app/lib/pokeapi/common/paginated.ts"
 ],
   "compilerOptions": {
     "lib": [

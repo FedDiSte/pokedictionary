@@ -2,7 +2,7 @@ import type { Config } from 'tailwindcss';
 
 module.exports = {
   darkMode: 'class',
-  content: ['./app/**/*.{ts,tsx}', './app/**/*.stories.@(js|jsx|mjs|ts|tsx)', '.storybook/**/*.{ts,tsx}'],
+  content: ['./app/**/*.{ts,tsx}', '.storybook/**/*.{ts,tsx}'],
   prefix: '',
   safelist: [
     {
@@ -51,6 +51,66 @@ module.exports = {
         card: {
           DEFAULT: 'hsl(var(--card))',
           foreground: 'hsl(var(--card-foreground))',
+        },
+        normal: {
+          DEFAULT: 'hsl(var(--normal))',
+        },
+        fighting: {
+          DEFAULT: 'hsl(var(--fighting))',
+        },
+        flying: {
+          DEFAULT: 'hsl(var(--flying))',
+        },
+        poison: {
+          DEFAULT: 'hsl(var(--poison))',
+        },
+        ground: {
+          DEFAULT: 'hsl(var(--ground))',
+        },
+        rock: {
+          DEFAULT: 'hsl(var(--rock))',
+        },
+        bug: {
+          DEFAULT: 'hsl(var(--bug))',
+        },
+        ghost: {
+          DEFAULT: 'hsl(var(--ghost))',
+        },
+        steel: {
+          DEFAULT: 'hsl(var(--steel))',
+        },
+        fire: {
+          DEFAULT: 'hsl(var(--fire))',
+        },
+        water: {
+          DEFAULT: 'hsl(var(--water))',
+        },
+        grass: {
+          DEFAULT: 'hsl(var(--grass))',
+        },
+        electric: {
+          DEFAULT: 'hsl(var(--electric))',
+        },
+        psychic: {
+          DEFAULT: 'hsl(var(--psychic))',
+        },
+        ice: {
+          DEFAULT: 'hsl(var(--ice))',
+        },
+        dragon: {
+          DEFAULT: 'hsl(var(--dragon))',
+        },
+        dark: {
+          DEFAULT: 'hsl(var(--dark))',
+        },
+        fairy: {
+          DEFAULT: 'hsl(var(--fairy))',
+        },
+        unknown: {
+          DEFAULT: 'hsl(var(--unknown))',
+        },
+        shadow: {
+          DEFAULT: 'hsl(var(--shadow))',
         },
       },
       borderRadius: {
